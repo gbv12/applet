@@ -1,0 +1,56 @@
+/**index.wxss**/
+.row{
+  display: flex;
+}
+.box {
+  /*内边距*/
+  padding: 0 40rpx;
+  position: relative;
+}
+
+.icon-small {
+  position: absolute;
+  left: 50rpx;
+  top: 10rpx;
+}
+
+input {
+  background-color: #eee;
+  height: 70rpx;
+  border-radius: 35rpx;
+  padding-left: 70rpx;
+  margin-top: 20rpx;
+}
+
+.item {
+  margin-top: 40rpx;
+  position: relative;
+  display: flex;
+}
+
+.item image {
+  width: 260rpx;
+  min-width: 260rpx;
+  border-radius: 10rpx;
+}
+
+.update {
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+  color: white;
+  font-size: 30rpx;
+}
+.item .songlist{
+  margin-left: 20rpx;
+}
+
+.item .song{
+  font-size: 28rpx;
+  width: 350rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding:20rpx 0;
+  color: rgb(128, 119, 119);
+}

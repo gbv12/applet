@@ -1,0 +1,33 @@
+/* pages/search/search.wxss */
+
+.box {
+  /* 内边距  0 上下   40 左右 */
+  padding: 0 40rpx;
+
+  /* 将box设置为参照物 */
+  position: relative;
+}
+input {
+  /* 背景颜色 */
+  background-color: #eee;
+  height: 80rpx;
+  /* 圆角 */
+  border-radius: 40rpx;
+  padding-left: 80rpx;
+}
+
+.icon-small {
+  /* 移动的元素 */
+  position: absolute;
+  top: 23rpx;
+  left: 65rpx;
+}
+
+.item {
+  display: flex;
+  font-size: 28rpx;
+  margin: 20rpx 0;
+}
+.word {
+  margin-left: 20rpx;
+}

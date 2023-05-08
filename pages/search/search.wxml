@@ -1,0 +1,25 @@
+<view class="box">
+  <!-- placeholder 在输入框里面没有内容的时候，显示的提示信息 -->
+  <input type="text" value="{{keyword}}" placeholder="搜索歌曲" bindinput="change" />
+  <!-- 定位  只能相对于父元素 的定位 -->
+  <icon class="icon-small" type="search" size="18"></icon>
+
+
+  <view wx:if="{{keyword == ''}}">
+    <view class="item" wx:for="{{hotList}}">
+      <view>{{index + 1}}</view>
+      <view class="word">
+        <view>{{item.searchWord}}</view>
+        <view>{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:elif="{{resultList.length}}">
+    <view wx:for="{{resultList}}" bindtap="toPlay" data-id="{{item.id}}">{{item.name}}</view>
+  </view>
+
+  <view wx:else>
+    <view wx:for="{{suggestList}}" bindtap="getResult" data-word="{{item.keyword}}">{{item.keyword}}</view>
+  </view>
+</view>

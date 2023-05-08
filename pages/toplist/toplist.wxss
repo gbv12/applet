@@ -1,0 +1,9 @@
+/* pages/toplist/toplist.wxss */
+.item{
+display: flex;
+font-size: 28rpx;
+max-width: 30rpx 0;
+}
+.right{
+margin-left: 20rpx;
+}

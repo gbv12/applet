@@ -1,0 +1,13 @@
+<!--pages/toplist/toplist.wxml-->
+<view>{{info.name}}</view>
+<view class="item" wx:for="{{info.tracks}}" bindtap="toPlay" data-id="{{item.id}}">
+  <view>{{index+1}}</view>
+  <view class="right">
+    <view>{{item.name}}</view>
+    <view>
+      <text wx:for="{{item.ar}}" wx:for-item="it">{{it.name}}</text>
+      -
+      <text>{{item.al.name}}</text>
+    </view>
+  </view>
+</view>

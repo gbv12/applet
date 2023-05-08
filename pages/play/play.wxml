@@ -1,0 +1,4 @@
+<!--pages/play/play.wxml-->
+<view class="box">
+<image mode="widthFix" src="{{info.al.picUrl}}"></image>
+</view>

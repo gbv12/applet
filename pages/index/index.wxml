@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<!-- 
+
+<view class="row"> 
+  <image src="https://www.huel.edu.cn/__local/A/D2/69/52B74D66E3BBD8A4FD924D65F06_162FEE67_19CCE.png" style="width: 480rpx;height: 480rpx; "></image>
+</view>
+
+<view class="row">
+  <view class="text">河南财经政法大学</view>
+  <view class="text">河南财经政法大学</view>
+  <view class="text">河南财经政法大学</view>
+</view>
+<view class="row">
+  <image src="../../images/02.jpg" class="img" mode="widthFix"></image>
+  <view style="width: 20rpx;"></view>
+  <image src="../../images/04.jpeg" mode="widthFix"></image>
+</view>
+
+<navigator url="/pages/toplist/toplist">跳转详情页面</navigator>
+
+<button bindtap="toResult"> 跳转到结果页面</button> -->
+<view class="box">
+  <input type="text" placeholder="搜索想听的歌曲" bindtap="toSearch"/>
+  <icon class="icon-small" type="search" size="26"></icon>
+  <view>
+    <view wx:for="{{list}}" class="item"  bindtap="toTopList" data-id="{{item.id}}"> 
+      <image src="{{item.coverImgUrl}}" alt="" mode="widthFix"></image>
+      <view class="update">{{item.updateFrequency}}</view>
+      <view class="songlist">
+      <view wx:for="{{item.tracks}}" wx:for-index="idx" wx:for-item="itemName" class="song">
+          {{idx+1}}.{{itemName.first}}-{{itemName.second}}
+        </view>
+      </view>
+    </view>
+
+</view>
+
+</view>
