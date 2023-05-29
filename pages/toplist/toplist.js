@@ -1,35 +1,29 @@
 // pages/toplist/toplist.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-      info:{},
+    info: {},
+    count: 1.1,
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
-    //获取从别的页面跳转携带的参数
-    // console.log(options.id);
-
+    
     wx.request({
-      url:`http://124.222.85.215:3000/playlist/detail?id=${options.id}`,
-      success:res=>{
+      url: `https://autumnfish.cn/playlist/detail?id=${options.id}`,
+      success: res => {
         console.log(res.data.playlist);
         this.setData({
-          info:res.data.playlist
+          info: res.data.playlist,
+          count: Math.round(res.data.playlist.playCount / 100000000 * 100) / 100
         })
       }
     })
   },
-toPlay(e){
-  wx.navigateTo({
-    url:`/pages/play/play?id=${e.currentTarget.dataset.id}`,
-  })
-},
+  toPlay(e) {
+    wx.navigateTo({
+      url: `/pages/play/play?id=${e.currentTarget.dataset.id}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

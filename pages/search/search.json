@@ -1,4 +1,7 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "搜索"
+  "navigationBarTitleText": "网易云音乐",
+  "navigationBarBackgroundColor": "#AD181F",
+  "navigationBarTextStyle": "white"
+  
 }

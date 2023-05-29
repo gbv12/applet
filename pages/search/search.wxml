@@ -1,25 +1,50 @@
 <view class="box">
   <!-- placeholder 在输入框里面没有内容的时候，显示的提示信息 -->
-  <input type="text" value="{{keyword}}" placeholder="搜索歌曲" bindinput="change" />
+  <input type="text" value="{{keyword}}" placeholder="搜索歌曲" bindinput="change" bindconfirm="getAll" data-id="{{keyword}}" />
   <!-- 定位  只能相对于父元素 的定位 -->
   <icon class="icon-small" type="search" size="18"></icon>
 
 
   <view wx:if="{{keyword == ''}}">
+    <view class="hotbang">热搜榜</view>
     <view class="item" wx:for="{{hotList}}">
-      <view>{{index + 1}}</view>
+      <view wx:if="{{(index+1)<=3}}">
+        <view style="color: rgb(221, 29, 29);">{{index + 1}}</view>
+      </view>
+      <view wx:else="{{(index+1)>3}}">
+        <view>{{index+1}}</view>
+      </view>
       <view class="word">
-        <view>{{item.searchWord}}</view>
-        <view>{{item.content}}</view>
+        <view style="font-size: 30rpx;" bindtap="chan" data-id="{{item.searchWord}}">{{item.searchWord}}</view>
+        <view style="color: rgb(179, 155, 155); font-size: 20rpx;">{{item.content}}</view>
       </view>
     </view>
   </view>
 
-  <view wx:elif="{{resultList.length}}">
-    <view wx:for="{{resultList}}" bindtap="toPlay" data-id="{{item.id}}">{{item.name}}</view>
+  <view wx:elif="{{resultList.length}}" style="padding-top: 20rpx;">
+    <view wx:for="{{resultList}}" bindtap="toPlay" data-id="{{item.id}}" class="contain">
+
+      <view style="display: flex;">
+        <view>
+          {{item.name}}
+          <text>\n</text>
+          <view style="color: rgb(179, 155, 155); font-size: 20rpx; ">
+            <text wx:for="{{item.artists}}" wx:for-item="it">{{it.name}} </text>
+            -
+            <text>{{item.album.name}}</text>
+          </view>
+        </view>
+        <view style="position: absolute;right: 0;padding-right: 30rpx;">
+          <image src="../../images/play.png" style="width: 60rpx;height: 60rpx;"></image>
+        </view>
+      </view>
+      <view class="line"></view>
+    </view>
   </view>
 
   <view wx:else>
-    <view wx:for="{{suggestList}}" bindtap="getResult" data-word="{{item.keyword}}">{{item.keyword}}</view>
+    <view class="list" wx:for="{{suggestList}}" bindtap="getResult" data-word="{{item.keyword}}">
+      <icon type="search" size="20"></icon> {{item.keyword}}
+    </view>
   </view>
 </view>

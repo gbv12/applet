@@ -1,7 +1,8 @@
 /**index.wxss**/
-.row{
+.row {
   display: flex;
 }
+
 .box {
   /*内边距*/
   padding: 0 40rpx;
@@ -41,16 +42,17 @@ input {
   color: white;
   font-size: 30rpx;
 }
-.item .songlist{
+
+.item .songlist {
   margin-left: 20rpx;
 }
 
-.item .song{
+.item .song {
   font-size: 28rpx;
   width: 350rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding:20rpx 0;
+  padding: 20rpx 0;
   color: rgb(128, 119, 119);
 }

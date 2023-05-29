@@ -1,4 +1,36 @@
 <!--pages/play/play.wxml-->
-<view class="box">
-<image mode="widthFix" src="{{info.al.picUrl}}"></image>
+<view class="container1">
+  <view class="background" style="background-image: url({{info.al.picUrl}});"></view>
+  <!-- background: #080B10; ../../images/black.jpg-->
+  <view class="content">
+    <view class="box">
+      <view>{{info.name}}</view>
+      <text>\n</text>
+      <view>
+        <image class="img" style="animation-play-state: {{status ? 'paused' : 'running'}};" mode="widthFix" src="{{info.al.picUrl}}" bindtap="toggle"></image>
+      </view>
+
+
+
+      <scroll-view scroll-y style="height: 210rpx;" scroll-top="{{70 * (current - 2)}}rpx" scroll-with-animation>
+        <view class="item" style="color: {{current - 1 == index ? 'white' : 'grey'}};" wx:for="{{lyric}}">{{item.word}}</view>
+      </scroll-view>
+    </view>
+    <view>最新评论</view>
+    <text>\n\n</text>
+    <view style="padding-left: 30rpx;" wx:for="{{comments}}">
+      <view style="display: flex;">
+        <image src="{{item.user.avatarUrl}}" style="width: 70rpx; height: 70rpx;border-radius: 50%;"></image>
+        <view>
+          <view style="font-size: 30rpx;color: rgb(218, 207, 202);">{{item.user.nickname}}</view>
+          <view style="font-size: 20rpx;color: rgb(197, 188, 186);">{{item.timeStr}}</view>
+        </view>
+
+
+      </view>
+      <view style="padding:0 70rpx;font-size: 28rpx;">{{item.content}}</view>
+      <view class="line"></view>
+    </view>
+  </view>
+
 </view>

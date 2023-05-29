@@ -1,9 +1,34 @@
 /* pages/toplist/toplist.wxss */
-.item{
-display: flex;
-font-size: 28rpx;
-max-width: 30rpx 0;
+.item {
+  display: flex;
+  font-size: 28rpx;
+  max-width: 30rpx 0;
+  padding: 10rpx 20rpx; 
+  position: relative;
 }
-.right{
-margin-left: 20rpx;
+
+.right {
+  margin-left: 20rpx;
+}
+
+.img {
+  width: 260rpx;
+  min-width: 260rpx;
+
+  padding-left: 70rpx;
+  padding-top: 50rpx;
+}
+
+.top {
+
+  height: 400rpx;
+  display: flex;
+}
+
+.with {
+  align-items: center;
+  color: white;
+  padding-bottom: 40rpx;
+  display: flex;
+  justify-content: center;
 }
